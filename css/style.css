@@ -1,0 +1,152 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #121212;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #121212;
+    height: 100vh;
+    width: 600px;
+    margin: 0 auto;
+}
+
+header {
+    display: flex;
+    font-size: 1.3em;
+    align-items: center;
+    width: 100%;
+    height: 60px;
+    padding: 10px 0 10px 20px;
+    color: white;
+    background-color: #de3f53;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+}
+
+.wrapper-list ul.list {
+    list-style: none;
+}
+
+.wrapper-list ul.list li {
+    position: relative;
+    background-color: #262e4c;
+    border-bottom: 1px solid #1c2340;
+    color: #b1b2c9;
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    transition: all 300ms ease;
+}
+
+.wrapper-list ul.list li:hover {
+    background-color: #313c63;
+}
+
+.wrapper-list ul.list li.removed {
+    animation: collapseItem 300ms ease;
+}
+
+.wrapper-list ul.list li.hidden {
+    display: none;
+}
+
+.wrapper-list ul.list li p {
+    max-width: 90%;
+    text-align: justify;
+}
+
+.wrapper-list ul.list .check {
+    background-color: #404a6e;
+    border-radius: 50%;
+    min-height: 20px;
+    min-width: 20px;
+    margin-right: 20px;
+    cursor: pointer;
+    transition: all 400ms ease;
+    padding: 3.5px;
+}
+
+.wrapper-list ul.list .check:hover {
+    background-color: #171d37
+}
+
+.wrapper-list ul.list .done {
+    text-decoration: line-through;
+}
+
+.wrapper-list ul.list .done .check {
+    background-color:#171d37;
+}
+
+.wrapper-list ul.list .done .check::after {
+    display: block;
+    content: '';
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    background-color: green;
+}
+
+.wrapper-list ul.list button.remove {
+    position: absolute;
+    right: 25px;
+    border: none;
+    background-color: red;
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    align-self: center;
+    color: white;
+    font-size: 10px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 500ms ease;
+    opacity: 0;
+}
+
+.wrapper-list ul.list li button.remove::after {
+    content: 'X';
+    display: block;
+}
+
+.wrapper-list ul.list li button.remove:hover {
+    background-color: darkred;
+}
+
+.wrapper-list ul.list li:hover button.remove {
+    opacity: 100%;
+}
+
+
+
+#inputTask {
+    display: block;
+    outline: none;
+    border: none;
+    height: 60px;
+    font-size: 15px;
+    padding: 10px 0 10px 20px;
+    width: 100%;
+    background-color: #171d37;
+    color: rgb(255, 255, 255);
+}
+
+
+@keyframes collapseItem{
+    0% {
+        transform: rotateX(0deg);
+    }
+    100% {
+        transform: rotateX(-90deg);
+    }
+
+}
